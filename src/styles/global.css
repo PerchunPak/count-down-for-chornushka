@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
+/* https://gwfh.mranftl.com/fonts/ole?subsets=latin */
+
+/* sixtyfour-convergence-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Sixtyfour Convergence';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/sixtyfour-convergence-v4-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 @theme {
+  --font-sans: 'Sixtyfour Convergence';
   --color-ctp-rosewater: #f5e0dc;
   --color-ctp-flamingo: #f2cdcd;
   --color-ctp-pink: #f5c2e7;

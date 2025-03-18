@@ -17,7 +17,7 @@
 
 <div
   {...api.getRootProps()}
-  class="inline-flex items-center gap-1 text-4xl sm:text-6xl md:text-8xl"
+  class="inline-flex items-center gap-1 text-xl sm:text-4xl md:text-6xl lg:text-8xl"
 >
   <div {...api.getItemProps({ type: "days" })}>
     {api.formattedTime.days}
