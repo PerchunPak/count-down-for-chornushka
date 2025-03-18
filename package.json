@@ -11,6 +11,8 @@
   "dependencies": {
     "@astrojs/svelte": "^7.0.6",
     "@tailwindcss/vite": "^4.0.14",
+    "@zag-js/svelte": "^1.4.1",
+    "@zag-js/timer": "^1.4.1",
     "astro": "^5.5.3",
     "svelte": "^5.23.1",
     "tailwindcss": "^4.0.14",

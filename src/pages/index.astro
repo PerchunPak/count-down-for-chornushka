@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Timer from "./Timer.svelte";
 ---
 
 <Layout>
-  <p class="h-[512px]">
-    Hi
-  </p>
+  <div class="flex h-full w-full place-content-center">
+    <Timer client:load />
+  </div>
 </Layout>
