@@ -11,7 +11,7 @@
     id,
     countdown: true,
     autoStart: true,
-    startMs: 1000,
+    startMs: targetDate.getTime() - now.getTime(),
     onComplete() {
       console.log("Timer completed");
     },
