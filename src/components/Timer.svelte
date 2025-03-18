@@ -1,42 +1,48 @@
 <script lang="ts">
   import { normalizeProps, useMachine } from "@zag-js/svelte";
   import * as timer from "@zag-js/timer";
+  import ChortIsFree from "./ChortIsFree.svelte";
 
-  const targetDate = new Date("2025-04-01T11:00:00.000Z")
-  const now = new Date()
+  const targetDate = new Date("2025-04-01T11:00:00.000Z");
+  const now = new Date();
 
   const id = $props.id();
   const service = useMachine(timer.machine, {
     id,
     countdown: true,
     autoStart: true,
-    startMs: targetDate.getTime() - now.getTime(),
+    startMs: 1000,
     onComplete() {
       console.log("Timer completed");
     },
   });
   const api = $derived(timer.connect(service, normalizeProps));
+  const leftSeconds = $derived(timer.parse(api.time));
 </script>
 
 <div
   {...api.getRootProps()}
   class="inline-flex items-center gap-1 text-xl sm:text-4xl md:text-6xl lg:text-8xl"
 >
-  <div {...api.getItemProps({ type: "days" })}>
-    {api.formattedTime.days}
-  </div>
-  <div {...api.getSeparatorProps()}>:</div>
-  <div {...api.getItemProps({ type: "hours" })}>
-    {api.formattedTime.hours}
-  </div>
-  <div {...api.getSeparatorProps()}>:</div>
-  <div {...api.getItemProps({ type: "minutes" })}>
-    {api.formattedTime.minutes}
-  </div>
-  <div {...api.getSeparatorProps()}>:</div>
-  <div {...api.getItemProps({ type: "seconds" })}>
-    {api.formattedTime.seconds}
-  </div>
+  {#if leftSeconds}
+    <div {...api.getItemProps({ type: "days" })}>
+      {api.formattedTime.days}
+    </div>
+    <div {...api.getSeparatorProps()}>:</div>
+    <div {...api.getItemProps({ type: "hours" })}>
+      {api.formattedTime.hours}
+    </div>
+    <div {...api.getSeparatorProps()}>:</div>
+    <div {...api.getItemProps({ type: "minutes" })}>
+      {api.formattedTime.minutes}
+    </div>
+    <div {...api.getSeparatorProps()}>:</div>
+    <div {...api.getItemProps({ type: "seconds" })}>
+      {api.formattedTime.seconds}
+    </div>
+  {:else}
+    <ChortIsFree />
+  {/if}
 </div>
 
 <style>
