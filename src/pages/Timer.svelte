@@ -2,12 +2,15 @@
   import { normalizeProps, useMachine } from "@zag-js/svelte";
   import * as timer from "@zag-js/timer";
 
+  const targetDate = new Date("2025-04-01T11:00:00.000Z")
+  const now = new Date()
+
   const id = $props.id();
   const service = useMachine(timer.machine, {
     id,
     countdown: true,
     autoStart: true,
-    startMs: timer.parse({ days: 2, seconds: 10 }),
+    startMs: targetDate.getTime() - now.getTime(),
     onComplete() {
       console.log("Timer completed");
     },
