@@ -15,5 +15,12 @@
     "svelte": "^5.23.1",
     "tailwindcss": "^4.0.14",
     "typescript": "^5.8.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-sort-imports": "^1.8.6",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }
