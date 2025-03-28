@@ -2,28 +2,37 @@
   import { normalizeProps, useMachine } from "@zag-js/svelte";
   import * as timer from "@zag-js/timer";
   import ChortIsFree from "./ChortIsFree.svelte";
+  import { onMount } from "svelte";
 
-  const targetDate = new Date("2025-04-07T11:00:00.000Z");
-  const now = new Date();
+  function createService({ targetDate, now }: { targetDate: Date; now: Date }) {
+    return useMachine(timer.machine, {
+      id,
+      countdown: true,
+      autoStart: true,
+      startMs: targetDate.getTime() - now.getTime(),
+      onComplete() {
+        console.log("Timer completed");
+      },
+    });
+  }
 
-  const id = $props.id();
-  const service = useMachine(timer.machine, {
-    id,
-    countdown: true,
-    autoStart: true,
-    startMs: targetDate.getTime() - now.getTime(),
-    onComplete() {
-      console.log("Timer completed");
-    },
+  let service = createService({
+    targetDate: new Date(1),
+    now: new Date(0),
   });
+  const id = $props.id();
   const api = $derived(timer.connect(service, normalizeProps));
   const leftSeconds = $derived(timer.parse(api.time));
+
+  onMount(() => {
+    service = createService({
+      targetDate: new Date("2025-04-07T11:00:00.000Z"),
+      now: new Date(),
+    });
+  });
 </script>
 
-<div
-  {...api.getRootProps()}
-  class="inline-flex items-center gap-1 text-[7vw]"
->
+<div {...api.getRootProps()} class="inline-flex items-center gap-1 text-[7vw]">
   {#if leftSeconds}
     <div {...api.getItemProps({ type: "days" })}>
       {api.formattedTime.days}
