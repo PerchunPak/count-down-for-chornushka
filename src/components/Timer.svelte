@@ -22,7 +22,7 @@
 
 <div
   {...api.getRootProps()}
-  class="inline-flex items-center gap-1 text-xl sm:text-4xl md:text-6xl lg:text-8xl"
+  class="inline-flex items-center gap-1 text-[7vw]"
 >
   {#if leftSeconds}
     <div {...api.getItemProps({ type: "days" })}>
@@ -50,7 +50,6 @@
     height: 1em;
     display: inline-block;
     overflow-y: hidden;
-    font-size: 3rem;
     line-height: 1em;
     font-variation-settings: "tnum";
     text-align: center;
