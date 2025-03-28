@@ -3,7 +3,7 @@
   import * as timer from "@zag-js/timer";
   import ChortIsFree from "./ChortIsFree.svelte";
 
-  const targetDate = new Date("2025-04-01T11:00:00.000Z");
+  const targetDate = new Date("2025-04-07T11:00:00.000Z");
   const now = new Date();
 
   const id = $props.id();
