@@ -33,7 +33,7 @@
 </script>
 
 <div {...api.getRootProps()} class="inline-flex items-center gap-1 text-[7vw]">
-  {#if leftSeconds}
+  {#if leftSeconds > 0}
     <div {...api.getItemProps({ type: "days" })}>
       {api.formattedTime.days}
     </div>
