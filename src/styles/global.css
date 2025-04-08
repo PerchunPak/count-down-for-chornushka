@@ -4,17 +4,17 @@
 
 /* https://gwfh.mranftl.com/fonts/ole?subsets=latin */
 
-/* ole-regular - latin */
+/* rubik-doodle-shadow-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Ole';
+  font-family: 'Rubik Doodle Shadow';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/ole-v3-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('/fonts/rubik-doodle-shadow-v1-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 @theme {
-  --font-sans: 'Ole';
+  --font-sans: 'Rubik Doodle Shadow';
   --color-background: #18111A;
   --color-text: #FCFCFC;
 }
