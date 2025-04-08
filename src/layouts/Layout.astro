@@ -1,16 +1,18 @@
 ---
 import "../styles/global.css";
+import BackgroundAnimation from "../components/BackgroundAnimation.astro";
 ---
 
 <!doctype html>
-<html lang="en" class="m-0 h-full w-full">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Count down until Chornushka will be free!</title>
+    <title>Count down until the release!</title>
   </head>
-  <body class="bg-ctp-base text-ctp-text m-0 h-screen w-screen">
+  <body class="bg-background text-text m-0 h-screen w-screen">
     <slot />
+    <BackgroundAnimation />
   </body>
 </html>

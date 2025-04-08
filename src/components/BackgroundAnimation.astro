@@ -1,0 +1,59 @@
+<div class="gradient -z-50"></div>
+<div class="gradient -z-50"></div>
+<div class="gradient -z-50"></div>
+<div class="gradient -z-50"></div>
+
+<style>
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .gradient {
+    position: fixed;
+    opacity: 0.75;
+    --size: 600px;
+    --speed: 15s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    width: var(--size);
+    height: var(--size);
+    filter: blur(calc(var(--size) / 5));
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  }
+
+  .gradient:nth-child(1) {
+    background-image: linear-gradient(purple, #5400fc, #c300ff, red, red);
+    left: -28rem;
+    bottom: -28rem;
+  }
+
+  .gradient:nth-child(2) {
+    background-image: linear-gradient(purple, red);
+    right: -20rem;
+    top: -30rem;
+  }
+
+  .gradient:nth-child(3) {
+    background-image: linear-gradient(purple, #a503fc, red);
+    right: -25rem;
+    bottom: -30rem;
+  }
+  .gradient:nth-child(4) {
+    --speed: 30s;
+    --size: 2000px;
+    background-image: linear-gradient(purple, #a503fc, red);
+
+    opacity: 0.05;
+    top: -40rem;
+    left: 0rem;
+  }
+
+  /* This is just to transition when you change the viewport size. */
+  * {
+    transition: all 0s ease-out;
+  }
+</style>
