@@ -1,3 +1,1 @@
-This is a local-joke project, please don't mind it.
-
-Someday I will tell this sad story...
+https://h4folks.com
