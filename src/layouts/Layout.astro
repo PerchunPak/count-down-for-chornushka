@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import BackgroundAnimation from "../components/BackgroundAnimation.astro";
+import FontSwitch from "../components/FontSwitch.svelte";
 ---
 
 <!doctype html>
@@ -12,6 +13,9 @@ import BackgroundAnimation from "../components/BackgroundAnimation.astro";
     <title>Count down until the release!</title>
   </head>
   <body class="bg-background text-text m-0 h-screen w-screen">
+    <div class="absolute top-5 right-5">
+      <FontSwitch client:load />
+    </div>
     <slot />
     <BackgroundAnimation />
   </body>
