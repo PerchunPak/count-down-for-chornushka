@@ -26,7 +26,7 @@
 
   onMount(() => {
     service = createService({
-      targetDate: new Date("2025-05-17T14:00:00.000Z"),
+      targetDate: new Date("2025-05-17T13:10:00.000Z"),
       now: new Date(),
     });
   });
